@@ -11,11 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 // ----------------------------------------------------------------------
 
-type Props = {
-    electricityMeters: TElectricityMeters | undefined;
-};
-
-export default function ElectricityMetersRecommendation({ electricityMeters }: Props) {
+export default function ElectricityMetersRecommendation() {
     return (
         <>
             <Card sx={{ p:2, textAlign: 'left', mb: 2 }}>

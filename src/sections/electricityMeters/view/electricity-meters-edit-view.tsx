@@ -3,7 +3,6 @@ import { useCallback, useState } from 'react';
 // @mui
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 // routes
@@ -16,11 +15,10 @@ import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
 // types
 //
 import {electricityMetersData} from "../data";
-import ElectricityMetersListHorizontal from "../electricity-meters-list-horizontal";
-import AccountGeneral from "../../account/account-general";
 import ElectricityMetersLive from "../electricity-meters-live";
 import ElectricityMetersHour from "../electricity-meters-hour";
 import ElectricityMetersRecommendation from "../electricity-meters-recommendation";
+import ElectricityMetersPromotion from "../electricity-meters-promotion";
 
 // ----------------------------------------------------------------------
 
@@ -47,14 +45,17 @@ const TABS = [
         label: 'Recommendation',
         icon: <Iconify icon="solar:bell-bing-bold" width={24} />,
     },
+    {
+        value: 'promotion',
+        label: 'Promotion',
+        icon: <Iconify icon="solar:clock-circle-bold" width={24} />,
+    },
 ];
 
 export default function ElectricityMetersEditView({ id }: Props) {
   const settings = useSettingsContext();
 
   const currentElectricityMeter = electricityMetersData.find(electricityMeter => electricityMeter.id === id);
-
-    console.log(currentElectricityMeter)
 
     const [currentTab, setCurrentTab] = useState('live');
 
@@ -106,7 +107,8 @@ export default function ElectricityMetersEditView({ id }: Props) {
         </Tabs>
         {currentTab === 'live' && <ElectricityMetersLive electricityMeters={currentElectricityMeter} />}
         {currentTab === 'hour' && <ElectricityMetersHour electricityMeters={currentElectricityMeter} />}
-        {currentTab === 'recommendation' && <ElectricityMetersRecommendation electricityMeters={currentElectricityMeter} />}
+        {currentTab === 'recommendation' && <ElectricityMetersRecommendation />}
+        {currentTab === 'promotion' && <ElectricityMetersPromotion id={id} />}
     </Container>
   );
 }

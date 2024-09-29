@@ -7,7 +7,6 @@ import {Slide} from "yet-another-react-lightbox";
 const slides:Slide[]  = [{
     type: 'image',
     src: '/assets/images/devices/qr.png',
-    title: 'aaa',
 }]
 
 export default function DeviceAdd() {

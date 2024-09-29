@@ -52,24 +52,28 @@ export const _contacts = [...Array(20)].map((_, index) => {
 
 // ----------------------------------------------------------------------
 
-export const _notifications = [...Array(2)].map((_, index) => ({
+export const _notifications = [...Array(3)].map((_, index) => ({
   id: _mock.id(index),
   avatarUrl: [
     null,
     null,
+    null,
   ][index],
-  type: ['warning', 'notification'][
+  type: ['warning', 'warning', 'notification'][
     index
   ],
   category: [
     'Warning',
-    'Notification',
+    'Warning',
+    'Notification'
   ][index],
+  value: ['high', 'low', ''][index],
   isUnRead: _mock.boolean(index),
   createdAt: _mock.time(index),
   title:
-    (index === 0 && `<p><strong>Хочешь сэкономить?</strong></p>`) ||
-    (index === 1 && `<p><strong>Экономь больше!</strong></p>`) ||
+    (index === 0 && `<p><strong>Внимание! Ограниченное предложение!</strong></p>`) ||
+    (index === 1 && `<p><strong>Внимание! Ограниченное предложение!</strong></p>`) ||
+    (index === 2 && `<p><strong>Экономь больше!</strong></p>`) ||
     '',
 }));
 
