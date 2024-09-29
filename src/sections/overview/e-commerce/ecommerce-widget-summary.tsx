@@ -17,6 +17,7 @@ interface Props extends CardProps {
   title: string;
   total: number;
   percent: number;
+  percentLabel?: string;
   chart: {
     colors?: string[];
     series: number[];
@@ -27,6 +28,7 @@ interface Props extends CardProps {
 export default function EcommerceWidgetSummary({
   title,
   percent,
+                                                 percentLabel,
   total,
   chart,
   sx,
@@ -101,7 +103,7 @@ export default function EcommerceWidgetSummary({
         {fPercent(percent)}
 
         <Box component="span" sx={{ color: 'text.secondary', typography: 'body2' }}>
-          {' than last week'}
+          {percentLabel}
         </Box>
       </Typography>
     </Stack>
@@ -114,8 +116,8 @@ export default function EcommerceWidgetSummary({
           {title}
         </Typography>
 
-        <Typography variant="h3" gutterBottom>
-          {fNumber(total)}
+        <Typography sx={{display: 'flex', alignItems: 'center', gap: '5px'}} variant="h3" gutterBottom>
+          {fNumber(total)} <Typography variant='body2'>kWh</Typography>
         </Typography>
 
         {renderTrending}
