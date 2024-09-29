@@ -23,25 +23,25 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 // ----------------------------------------------------------------------
-
 // @mui
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
+import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 // routes
 import Router from 'src/routes/sections';
 // theme
 import ThemeProvider from 'src/theme';
 // hooks
-import { useScrollToTop } from 'src/hooks/use-scroll-to-top';
+import {useScrollToTop} from 'src/hooks/use-scroll-to-top';
 // components
 import ProgressBar from 'src/components/progress-bar';
 import MotionLazy from 'src/components/animate/motion-lazy';
 import SnackbarProvider from 'src/components/snackbar/snackbar-provider';
-import { SettingsProvider, SettingsDrawer } from 'src/components/settings';
+import {SettingsDrawer, SettingsProvider} from 'src/components/settings';
 // sections
-import { CheckoutProvider } from 'src/sections/checkout/context';
+import {CheckoutProvider} from 'src/sections/checkout/context';
+import {DeviceConsumer, DeviceProvider} from "src/sections/smart-device/context";
 // auth
-import { AuthProvider, AuthConsumer } from 'src/auth/context/jwt';
+import {AuthConsumer, AuthProvider} from 'src/auth/context/jwt';
 // import { AuthProvider, AuthConsumer } from 'src/auth/context/auth0';
 // import { AuthProvider, AuthConsumer } from 'src/auth/context/amplify';
 // import { AuthProvider, AuthConsumer } from 'src/auth/context/firebase';
@@ -65,32 +65,36 @@ export default function App() {
 
   return (
     <AuthProvider>
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <SettingsProvider
-          defaultSettings={{
-            themeMode: 'light', // 'light' | 'dark'
-            themeDirection: 'ltr', //  'rtl' | 'ltr'
-            themeContrast: 'default', // 'default' | 'bold'
-            themeLayout: 'vertical', // 'vertical' | 'horizontal' | 'mini'
-            themeColorPresets: 'orange', // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
-            themeStretch: false,
-          }}
-        >
-          <ThemeProvider>
-            <MotionLazy>
-              <SnackbarProvider>
-                <CheckoutProvider>
-                  <SettingsDrawer />
-                  <ProgressBar />
-                  <AuthConsumer>
-                    <Router />
-                  </AuthConsumer>
-                </CheckoutProvider>
-              </SnackbarProvider>
-            </MotionLazy>
-          </ThemeProvider>
-        </SettingsProvider>
-      </LocalizationProvider>
+        <DeviceProvider>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <SettingsProvider
+              defaultSettings={{
+                themeMode: 'light', // 'light' | 'dark'
+                themeDirection: 'ltr', //  'rtl' | 'ltr'
+                themeContrast: 'default', // 'default' | 'bold'
+                themeLayout: 'vertical', // 'vertical' | 'horizontal' | 'mini'
+                themeColorPresets: 'orange', // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
+                themeStretch: false,
+              }}
+            >
+              <ThemeProvider>
+                <MotionLazy>
+                  <SnackbarProvider>
+                    <CheckoutProvider>
+                      <SettingsDrawer />
+                      <ProgressBar />
+                      <AuthConsumer>
+                      <DeviceConsumer>
+                        <Router />
+                      </DeviceConsumer>
+                      </AuthConsumer>
+                    </CheckoutProvider>
+                  </SnackbarProvider>
+                </MotionLazy>
+              </ThemeProvider>
+            </SettingsProvider>
+          </LocalizationProvider>
+        </DeviceProvider>
     </AuthProvider>
   );
 }
