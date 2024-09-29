@@ -9,6 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { fData } from 'src/utils/format-number';
 // components
 import Chart, { useChart } from 'src/components/chart';
+import CardHeader from "@mui/material/CardHeader";
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +18,6 @@ interface Props extends CardProps {
   data: {
     name: string;
     usedStorage: number;
-    filesCount: number;
   }[];
   chart: {
     colors?: string[];
@@ -62,7 +62,6 @@ export default function FileStorageOverview({ data, total, chart, ...other }: Pr
             offsetY: -40,
           },
           total: {
-            label: `Used of ${fData(total)} / 5000Kw`,
             color: theme.palette.text.disabled,
             fontSize: theme.typography.body2.fontSize as string,
             fontWeight: theme.typography.body2.fontWeight,
@@ -84,6 +83,7 @@ export default function FileStorageOverview({ data, total, chart, ...other }: Pr
 
   return (
     <Card {...other}>
+      <CardHeader title='Текущая затрата' sx={{ mb: 1 }} />
       <Chart type="radialBar" series={[series]} options={chartOptions} height={360} />
 
       <Stack spacing={3} sx={{ px: 3, pb: 5 }}>
@@ -92,7 +92,6 @@ export default function FileStorageOverview({ data, total, chart, ...other }: Pr
 
             <ListItemText
               primary={category.name}
-              secondary={`${category.filesCount} files`}
               secondaryTypographyProps={{
                 mt: 0.5,
                 component: 'span',
@@ -101,7 +100,7 @@ export default function FileStorageOverview({ data, total, chart, ...other }: Pr
               }}
             />
 
-            <Box sx={{ typography: 'subtitle2' }}> {fData(category.usedStorage)} </Box>
+            <Box sx={{ typography: 'subtitle2' }}> {category.usedStorage} Kw </Box>
           </Stack>
         ))}
       </Stack>

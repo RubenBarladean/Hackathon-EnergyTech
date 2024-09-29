@@ -19,18 +19,18 @@ import ProfileCover from '../profile-cover';
 
 // ----------------------------------------------------------------------
 
-const TABS = [
-  {
-    value: 'profile',
-    label: 'Profile',
-    icon: <Iconify icon="solar:user-id-bold" width={24} />,
-  },
-  {
-    value: 'gallery',
-    label: 'Gallery',
-    icon: <Iconify icon="solar:gallery-wide-bold" width={24} />,
-  },
-];
+// const TABS = [
+//   {
+//     value: 'profile',
+//     label: 'Profile',
+//     icon: <Iconify icon="solar:user-id-bold" width={24} />,
+//   },
+//   {
+//     value: 'gallery',
+//     label: 'Gallery',
+//     icon: <Iconify icon="solar:gallery-wide-bold" width={24} />,
+//   },
+// ];
 
 // ----------------------------------------------------------------------
 
@@ -53,43 +53,6 @@ export default function UserProfileView() {
 
   return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
-
-      <Card
-        sx={{
-          mb: 3,
-          height: 290,
-        }}
-      >
-        <ProfileCover
-          role={_userAbout.role}
-          name={user?.displayName}
-          avatarUrl={user?.photoURL}
-          coverUrl={_userAbout.coverUrl}
-        />
-
-        <Tabs
-          value={currentTab}
-          onChange={handleChangeTab}
-          sx={{
-            width: 1,
-            bottom: 0,
-            zIndex: 9,
-            position: 'absolute',
-            bgcolor: 'background.paper',
-            [`& .${tabsClasses.flexContainer}`]: {
-              pr: { md: 3 },
-              justifyContent: {
-                sm: 'center',
-                md: 'flex-end',
-              },
-            },
-          }}
-        >
-          {TABS.map((tab) => (
-            <Tab key={tab.value} value={tab.value} icon={tab.icon} label={tab.label} />
-          ))}
-        </Tabs>
-      </Card>
 
       {currentTab === 'profile' && <ProfileHome info={_userAbout} posts={_userFeeds} />}
 

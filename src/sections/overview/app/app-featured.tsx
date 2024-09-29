@@ -72,7 +72,7 @@ function CarouselItem({ item, active }: CarouselItemProps) {
       src={coverUrl}
       overlay={`linear-gradient(to bottom, ${alpha(theme.palette.grey[900], 0)} 0%, ${
         theme.palette.grey[900]
-      } 75%)`}
+      } 95%)`}
       sx={{
         width: 1,
         height: {
@@ -85,40 +85,33 @@ function CarouselItem({ item, active }: CarouselItemProps) {
 
   return (
     <MotionContainer action animate={active} sx={{ position: 'relative' }}>
-      <Stack
-        spacing={1}
-        sx={{
-          p: 3,
-          width: 1,
-          bottom: 0,
-          zIndex: 9,
-          textAlign: 'left',
-          position: 'absolute',
-          color: 'common.white',
-        }}
-      >
-        <m.div variants={varFade().inRight}>
-          <Typography variant="overline" sx={{ color: 'primary.light' }}>
-            Featured App
-          </Typography>
-        </m.div>
+        <Stack
+            spacing={1}
+            sx={{
+                p: 3,
+                width: 2,
+                bottom: 0,
+                zIndex: 9,
+                textAlign: 'left',
+                position: 'absolute',
+                color: 'common.white',
+            }}
+        >
 
-        <m.div variants={varFade().inRight}>
-          <Link color="inherit" underline="none">
-            <Typography variant="h5" noWrap>
-              {title}
-            </Typography>
-          </Link>
-        </m.div>
+            <m.div variants={varFade().inRight}>
+                <Typography variant="h5" sx={{color: 'primary.light'}}>
+                    Voucher  <Typography variant="h3" sx={{color: 'white'}}>15%</Typography>
+                </Typography>
+            </m.div>
 
-        <m.div variants={varFade().inRight}>
-          <Typography variant="body2" noWrap>
-            {description}
-          </Typography>
-        </m.div>
-      </Stack>
+            <m.div variants={varFade().inRight}>
+                <Typography variant="body2" noWrap={true}>
+                    {description}
+                </Typography>
+            </m.div>
+        </Stack>
 
-      {renderImg}
+        {renderImg}
     </MotionContainer>
   );
 }
