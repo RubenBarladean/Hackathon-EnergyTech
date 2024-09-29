@@ -10,4 +10,6 @@ export type DeviceType = {
 export type SmartDeviceContextType = {
     devices: DeviceType[]
     onToggleDevice?: (id: number) => void
+    onAllOnDevice?: () => void
+    onAllOffDevice?: () => void
 }

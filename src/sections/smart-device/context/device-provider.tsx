@@ -1,5 +1,5 @@
 import {DeviceContext} from "./device-context";
-import { SmartDeviceContextType} from "../types";
+import {SmartDeviceContextType} from "../types";
 import {useCallback, useEffect, useMemo, useReducer} from "react";
 import {initialState} from "./initial-state";
 
@@ -9,11 +9,15 @@ type Props = {
 
 enum Types {
     INITIAL = 'INITIAL',
+    ALL_OFF = 'ALL_OFF',
+    ALL_ON = 'ALL_ON',
     TOGGLE = 'TOGGLE'
 }
 
 type Payload = {
     [Types.INITIAL]: undefined,
+    [Types.ALL_ON]: undefined,
+    [Types.ALL_OFF]: undefined,
     [Types.TOGGLE]: {
         id: number
     };
@@ -33,7 +37,7 @@ type ActionMapType<M extends { [index: string]: any }> = {
 type ActionsType = ActionMapType<Payload>[keyof ActionMapType<Payload>];
 
 const reducer = (state: SmartDeviceContextType, action: ActionsType) => {
-    if(action.type === Types.INITIAL) {
+    if (action.type === Types.INITIAL) {
         return {
             ...initialState
         }
@@ -50,13 +54,30 @@ const reducer = (state: SmartDeviceContextType, action: ActionsType) => {
             })
         };
     }
+
+    if (action.type === Types.ALL_ON) {
+        return {
+            devices: state.devices.map((device) => {
+                return {...device, toggle: true}
+            })
+        }
+    }
+
+    if (action.type === Types.ALL_OFF) {
+        return {
+            devices: state.devices.map((device) => {
+                return {...device, toggle: false}
+            })
+        }
+    }
+
     return state;
 };
 
 export function DeviceProvider({children}: Props) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const initialize = useCallback( () => {
+    const initialize = useCallback(() => {
         dispatch({
             type: Types.INITIAL,
         });
@@ -75,10 +96,25 @@ export function DeviceProvider({children}: Props) {
         });
     }, [])
 
+    const onAllOnDevice = useCallback(() => {
+        dispatch({
+            type: Types.ALL_ON
+        });
+    }, [])
+
+
+    const onAllOffDevice = useCallback(() => {
+        dispatch({
+            type: Types.ALL_OFF
+        });
+    }, [])
+
     const memoizedValue = useMemo(() => ({
         ...state,
-        onToggleDevice
-    }), [onToggleDevice, state])
+        onToggleDevice,
+        onAllOnDevice,
+        onAllOffDevice
+    }), [onToggleDevice, onAllOnDevice, onAllOffDevice, state])
 
     return <DeviceContext.Provider value={memoizedValue}>{children}</DeviceContext.Provider>
 }
