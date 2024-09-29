@@ -89,22 +89,18 @@ export default function OverviewFileView() {
         {
           name: 'Images',
           usedStorage: GB / 2,
-          filesCount: 223,
         },
         {
           name: 'Media',
           usedStorage: GB / 5,
-          filesCount: 223,
         },
         {
           name: 'Documents',
           usedStorage: GB / 5,
-          filesCount: 223,
         },
         {
           name: 'Other',
           usedStorage: GB / 10,
-          filesCount: 223,
         },
       ]}
     />

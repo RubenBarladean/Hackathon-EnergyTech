@@ -8,6 +8,8 @@ import { useTheme, alpha } from '@mui/material/styles';
 import { IUserProfileCover } from 'src/types/user';
 // theme
 import { bgGradient } from 'src/theme/css';
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 // ----------------------------------------------------------------------
 
@@ -23,15 +25,17 @@ export default function ProfileCover({ name, avatarUrl, role, coverUrl }: IUserP
         }),
         height: 1,
         color: 'common.white',
+          position: 'relative',
       }}
     >
+
       <Stack
         direction={{ xs: 'column', md: 'row' }}
         sx={{
           left: { md: 24 },
-          bottom: { md: 24 },
+          bottom: { md: 34 },
           zIndex: { md: 10 },
-          pt: { xs: 6, md: 0 },
+          pt: { xs: 2, md: 0 },
           position: { md: 'absolute' },
         }}
       >
@@ -40,8 +44,8 @@ export default function ProfileCover({ name, avatarUrl, role, coverUrl }: IUserP
           alt={name}
           sx={{
             mx: 'auto',
-            width: { xs: 64, md: 128 },
-            height: { xs: 64, md: 128 },
+            width: { xs: 54, md: 108 },
+            height: { xs: 54, md: 108 },
             border: `solid 2px ${theme.palette.common.white}`,
           }}
         />
@@ -52,10 +56,10 @@ export default function ProfileCover({ name, avatarUrl, role, coverUrl }: IUserP
             ml: { md: 3 },
             textAlign: { xs: 'center', md: 'unset' },
           }}
-          primary={name}
-          secondary={role}
+          primary="Alex Gradinari"
+          secondary='Welcome back!'
           primaryTypographyProps={{
-            typography: 'h4',
+            typography: 'h5',
           }}
           secondaryTypographyProps={{
             mt: 0.5,

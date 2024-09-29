@@ -23,6 +23,9 @@ import {
   ContactsPopover,
   NotificationsPopover,
 } from '../_common';
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import Iconify from "../../components/iconify";
 
 // ----------------------------------------------------------------------
 
@@ -64,6 +67,11 @@ export default function Header({ onOpenNav }: Props) {
         justifyContent="flex-end"
         spacing={{ xs: 0.5, sm: 1 }}
       >
+          <Card sx={{paddingX: 2, paddingY: 0.5, display: 'flex', gap: '10px', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+              <Iconify color='rgba(235, 171, 6, 1)' icon="majesticons:coins-line" />
+             <Typography fontWeight='700' variant='body1' color='darkgrey'>120.00</Typography>
+          </Card>
+
         <LanguagePopover />
 
         <SettingsButton />

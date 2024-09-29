@@ -55,7 +55,7 @@ export function useNavData() {
       {
         subheader: t('Панель управления'),
         items: [
-          { title: t('Профиль'), path: paths.dashboard.root, icon: ICONS.dashboard },
+          { title: t('Points page'), path: paths.dashboard.root, icon: ICONS.dashboard },
           { title: t('Общее'), path: paths.dashboard.general.ecommerce, icon: ICONS.ecommerce },
         ],
       },
