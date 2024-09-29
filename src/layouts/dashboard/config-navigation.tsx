@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import {useMemo} from 'react';
 // routes
 import { paths } from 'src/routes/paths';
 // locales
@@ -58,6 +58,7 @@ export function useNavData() {
         items: [
           { title: 'Points page', path: paths.dashboard.root, icon: ICONS.dashboard },
           { title: 'Electricity meters', path: paths.dashboard.general.electricityMeters, icon: ICONS.ecommerce },
+          { title: 'Smart device', path: paths.dashboard.general.smartDevice, icon: ICONS.kanban },
         ],
       },
 

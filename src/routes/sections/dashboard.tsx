@@ -14,6 +14,7 @@ const IndexPage = lazy(() => import('src/pages/dashboard/app'));
 const OverviewEcommercePage = lazy(() => import('src/pages/dashboard/ecommerce'));
 const ElectricityMetersListPage = lazy(() => import('src/pages/dashboard/electricityMeters/list'));
 const ElectricityMetersEditPage = lazy(() => import('src/pages/dashboard/electricityMeters/edit'));
+const SmartDevicePage = lazy(() => import('src/pages/dashboard/smart-device'));
 const OverviewAnalyticsPage = lazy(() => import('src/pages/dashboard/analytics'));
 const OverviewBankingPage = lazy(() => import('src/pages/dashboard/banking'));
 const OverviewBookingPage = lazy(() => import('src/pages/dashboard/booking'));
@@ -83,6 +84,7 @@ export const dashboardRoutes = [
       { element: <UserProfilePage />, index: true },
       { path: 'electricity-meters', element: <ElectricityMetersListPage /> },
       { path: 'electricity-meters/:id/edit', element: <ElectricityMetersEditPage /> },
+      { path: 'smart-device', element: <SmartDevicePage /> },
       { path: 'analytics', element: <OverviewAnalyticsPage /> },
       { path: 'banking', element: <OverviewBankingPage /> },
       { path: 'booking', element: <OverviewBookingPage /> },
