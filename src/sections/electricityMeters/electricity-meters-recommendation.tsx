@@ -16,8 +16,8 @@ export default function ElectricityMetersRecommendation() {
         <>
             <Card sx={{ p:2, textAlign: 'left', mb: 2 }}>
                 <ListItemText
-                    primary="Хочешь сэкономить?"
-                    secondary="С 15:00 до 17:00 повысь свое энергопотребление на 2 кВт/ч. Это поможет тебе использовать свое электричество на 10% выгоднее, чем обычно. Экономия 10 лей. "
+                    primary="Want to save money?"
+                    secondary="From 3:00 p.m. to 5:00 p.m., increase your energy consumption by 2 kWh. This will help you use your electricity 10% more favorably than usual. Savings of 10 lei. "
                     primaryTypographyProps={{typography: 'subtitle1'}}
                     secondaryTypographyProps={{component: 'span', mt: 0.5}}
                 />

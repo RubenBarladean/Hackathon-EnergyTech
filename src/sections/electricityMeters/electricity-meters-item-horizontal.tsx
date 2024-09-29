@@ -95,7 +95,7 @@ export default function ElectricityMetersItemHorizontal({ electricityMeters }: P
             <Stack spacing={1} flexGrow={1} direction="row">
 
             <TextMaxLine variant="body2" sx={{ color: 'text.secondary' }}>
-              Intake - {intake}Kw/h
+              Intake - {intake} kWh
             </TextMaxLine>
               <Label variant="soft" color={getStatusColor(intakeStatus)}>
                 {getStatusText(intakeStatus)}
@@ -109,10 +109,11 @@ export default function ElectricityMetersItemHorizontal({ electricityMeters }: P
 
         {mdUp && (
           <Box sx={{ width: 180, height: 240, position: 'relative', flexShrink: 0, p: 1 }}>
-            <Image src="https://blog.myconnect.com.au/wp-content/uploads/2022/08/electricity-meters-strata-buildings.jpg" sx={{ height: 1, borderRadius: 1.5 }} />
+            <Image src="https://cdn.cbs.nl/images/41517351514d66536b465059692b346b54742f3341673d3d/720x480.jpg" sx={{ height: 1, borderRadius: 1.5 }} />
           </Box>
         )}
       </Stack>
+
     </>
   );
 }

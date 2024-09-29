@@ -16,6 +16,8 @@ import {alpha, useTheme} from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import Iconify from "../../components/iconify";
+import CardHeader from "@mui/material/CardHeader";
 
 // ----------------------------------------------------------------------
 
@@ -172,6 +174,11 @@ export default function ProfileHome({ info, posts }: Props) {
         <Stack spacing={3}>
             {renderAbout}
 
+            <Card sx={{ p: 3 }}>
+                <CardHeader
+                    title="Our vouchers"
+                    sx={{ mb: 5, pt: 0 }}
+                />
                 {vouchers.map((item) => (
                     <Card key={item.img} sx={{mb: 2, paddingTop: 0}}>
                         <Image sx={{width: '100%', height: '230px', filter: 'brightness(60%)'}} src={item.img}/>
@@ -190,6 +197,7 @@ export default function ProfileHome({ info, posts }: Props) {
 
                         <Container sx={{p: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                             <Typography sx={{display: 'flex', gap: '7px', alignItems: 'center', justifyContent: 'space-between'}} variant='h4'>
+                                <Iconify color='rgba(235, 171, 6, 1)' icon="majesticons:coins-line" />
                                 {item.price} <Typography variant='body2'>{item.priceSpan}</Typography>
                             </Typography>
 
@@ -199,6 +207,7 @@ export default function ProfileHome({ info, posts }: Props) {
                         </Container>
                     </Card>
                 ))}
+            </Card>
         </Stack>
       </Grid>
 

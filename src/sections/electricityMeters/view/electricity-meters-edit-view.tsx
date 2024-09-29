@@ -37,7 +37,7 @@ const TABS = [
     },
     {
         value: 'hour',
-        label: 'Hour',
+        label: 'Consumption per hours',
         icon: <Iconify icon="solar:bill-list-bold" width={24} />,
     },
     {
@@ -66,29 +66,20 @@ export default function ElectricityMetersEditView({ id }: Props) {
     return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
       <CustomBreadcrumbs
-        heading="Electricity Meters"
+        heading="Household"
         links={[
           {
             name: 'Dashboard',
             href: paths.dashboard.root,
           },
           {
-            name: 'Electricity Meters',
+            name: 'Households',
+              href: paths.dashboard.general.electricityMeters,
           },
           {
-            name: 'List',
+            name: `Household - ${currentElectricityMeter?.id}`,
           },
         ]}
-        action={
-          <Button
-            component={RouterLink}
-            href={paths.dashboard.post.new}
-            variant="contained"
-            startIcon={<Iconify icon="mingcute:add-line" />}
-          >
-            New Post
-          </Button>
-        }
         sx={{
           mb: { xs: 3, md: 5 },
         }}
