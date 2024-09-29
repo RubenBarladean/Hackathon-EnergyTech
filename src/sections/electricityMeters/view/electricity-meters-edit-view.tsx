@@ -20,6 +20,7 @@ import ElectricityMetersListHorizontal from "../electricity-meters-list-horizont
 import AccountGeneral from "../../account/account-general";
 import ElectricityMetersLive from "../electricity-meters-live";
 import ElectricityMetersHour from "../electricity-meters-hour";
+import ElectricityMetersRecommendation from "../electricity-meters-recommendation";
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +44,7 @@ const TABS = [
     },
     {
         value: 'recommendation',
-        label: 'recommendation',
+        label: 'Recommendation',
         icon: <Iconify icon="solar:bell-bing-bold" width={24} />,
     },
 ];
@@ -105,6 +106,7 @@ export default function ElectricityMetersEditView({ id }: Props) {
         </Tabs>
         {currentTab === 'live' && <ElectricityMetersLive electricityMeters={currentElectricityMeter} />}
         {currentTab === 'hour' && <ElectricityMetersHour electricityMeters={currentElectricityMeter} />}
+        {currentTab === 'recommendation' && <ElectricityMetersRecommendation electricityMeters={currentElectricityMeter} />}
     </Container>
   );
 }
