@@ -3,7 +3,6 @@ import { useRef } from 'react';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Unstable_Grid2';
-import CardHeader from '@mui/material/CardHeader';
 // _mock
 // utils
 // types
@@ -12,11 +11,8 @@ import { IUserProfile, IUserProfilePost } from 'src/types/user';
 //
 import BankingBalanceStatistics from "../overview/banking/banking-balance-statistics";
 import AppFeatured from "../overview/app/app-featured";
-import {_analyticTraffic, _appFeatured, _mock} from "../../_mock";
 import Image from "../../components/image";
 import {alpha, useTheme} from "@mui/material/styles";
-import AnalyticsTrafficBySite from "../overview/analytics/analytics-traffic-by-site";
-import BankingInviteFriends from "../overview/banking/banking-invite-friends";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -73,7 +69,7 @@ export default function ProfileHome({ info, posts }: Props) {
         {
             id: '1',
             title: 'efgrfgrggrfgrgrtgv ',
-            coverUrl: '/assets/images/hackathon/telegram3.jpg',
+            coverUrl: '/assets/images/hackathon/telegram13.jpg',
             description: 'Get a discount in the form of a voucher',
         },
         {
@@ -85,7 +81,7 @@ export default function ProfileHome({ info, posts }: Props) {
         {
             id: '3',
             title: 'string',
-            coverUrl: '/assets/images/hackathon/telegram4.jpg',
+            coverUrl: '/assets/images/hackathon/telegram15.jpg',
             description: 'Get a discount in the form of a voucher',
         },
     ]
@@ -158,15 +154,15 @@ export default function ProfileHome({ info, posts }: Props) {
         {
             price: '50',
             priceSpan: 'e-coin',
-            title: 'Voucher UNDP',
-            description: 'Buy a UNDP voucher and get a 15% discount',
-            img: '/assets/images/hackathon/telegram3.jpg'
+            title: 'Voucher Volta',
+            description: 'Buy a Volta voucher and get a 500-lei discount',
+            img: '/assets/images/hackathon/Group1.png'
         },
         {
-            price: '80',
+            price: '50',
             priceSpan: 'e-coin',
             title: 'MoldElectrica',
-            description: 'Buy a MoldElectrica voucher and get a 22% discount',
+            description: 'Buy a MoldElectrica voucher and get a 500-lei discount',
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYoaJwpqynRhXwvkXzyzGeIAeH3KAbZpbA8A&s'
         },
     ]
@@ -197,7 +193,7 @@ export default function ProfileHome({ info, posts }: Props) {
                                 {item.price} <Typography variant='body2'>{item.priceSpan}</Typography>
                             </Typography>
 
-                            <Button sx={{fontWeight: '700', color: 'white', padding: '10px', backgroundColor: 'rgba(155, 18, 18, 1)'}}>
+                            <Button sx={{fontWeight: '700', color: 'white', padding: '10px', backgroundColor: 'rgba(235, 171, 6, 1)'}}>
                                 Buy voucher
                             </Button>
                         </Container>
