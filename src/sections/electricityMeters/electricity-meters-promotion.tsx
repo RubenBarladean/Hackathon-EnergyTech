@@ -32,22 +32,21 @@ export default function ElectricityMetersPromotion({id}: Props) {
         return (
             <>
                 <Card sx={{p: 3, textAlign: 'center', mb: 2}}>
-                    <Typography variant="h3">Акция</Typography>
+                    <Typography variant="h3">Action</Typography>
                     <ElectricityMetersTimer time={date() as 'string'}/>
                 </Card>
                 <Stack direction={{xs: 'column', sm: 'row'}} sx={{mb: 2}} spacing={2}>
                     <Card sx={{p: 2, textAlign: 'center',  flex: 1}}>
-                        <Typography>Потреблять за 60 минут 450Wh</Typography>
+                        <Typography>Consume in 60 minutes - 450Wh</Typography>
                     </Card>
                     <ElectricityMetersCurrentWh/>
                 </Stack>
                 <Card sx={{p: 3, textAlign: 'center', mb: 2}}>
-                    <Typography variant="body1">Потребляйте меньше этого кол-ва энергии в течении всего мероприятия ,
-                        чтобы зарабоать баллы.</Typography>
+                    <Typography variant="body1">Use less than this amount of energy throughout the event, to earn points.</Typography>
                 </Card>
                 <Stack direction={{xs: 'column', sm: 'row'}} spacing={2} sx={{mb: 3}}>
                     <Card sx={{p: 2, textAlign: 'center', flex: 1, alignContent: 'center'}}>
-                        <Typography>20 баллов вы получите</Typography>
+                        <Typography>20 points you will receive</Typography>
                     </Card>
                     <Card sx={{p: 2, textAlign: 'center', flex: 1}}>
                         <ListItemText

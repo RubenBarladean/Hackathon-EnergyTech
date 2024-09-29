@@ -6,6 +6,7 @@ import {TElectricityMeters} from "./types";
 import Grid from "@mui/material/Unstable_Grid2";
 import AnalyticsWebsiteVisits from './analytics-website-visits';
 import AnalyticsWebsiteVisitsRevert from "./analytics-website-visits-revert";
+import Scrollbar from "../../components/scrollbar";
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +17,8 @@ type Props = {
 export default function ElectricityMetersHour({ electricityMeters }: Props) {
     return (
         <>
-            <Grid xs={12} md={6} lg={8}>
+            <Scrollbar>
+            <Grid xs={12} md={6} lg={8} minWidth={600}>
                 <AnalyticsWebsiteVisits
                     title="Electricity consumption"
                     chart={{
@@ -45,6 +47,7 @@ export default function ElectricityMetersHour({ electricityMeters }: Props) {
                     }}
                 />
             </Grid>
+            </Scrollbar>
         </>
     );
 }

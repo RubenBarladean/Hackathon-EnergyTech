@@ -6,7 +6,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.694,
         month: 500,
-        name: 'Кондиционер',
+        name: 'Air conditioner',
         toggle: true
     },
     {
@@ -14,7 +14,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.167,
         month: 120,
-        name: 'Холодильник',
+        name: 'Refrigerator',
         toggle: true
     },
     {
@@ -22,7 +22,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.111,
         month: 80,
-        name: 'Освещение',
+        name: 'Illumination',
         toggle: true
     },
     {
@@ -30,7 +30,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.208,
         month: 150,
-        name: 'Индукционная',
+        name: 'Induction hob',
         toggle: true
     },
     {
@@ -38,7 +38,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.069,
         month: 50,
-        name: 'Стиральная машина',
+        name: 'Washing machine',
         toggle: true
     },
     {
@@ -46,7 +46,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.243,
         month: 175,
-        name: 'Электрический бойлер',
+        name: 'Electric boiler',
         toggle: true
     },
     {
@@ -54,7 +54,7 @@ export const devicesData: DeviceType[] = [
         image: '/assets/images/devices/mock-device.jpg',
         hour: 0.104,
         month: 75,
-        name: 'Телевизор',
+        name: 'TV',
         toggle: true
     }
 ]
