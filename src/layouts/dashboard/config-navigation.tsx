@@ -56,7 +56,7 @@ export function useNavData() {
       {
         subheader: t('Панель управления'),
         items: [
-          { title: t('Профиль'), path: paths.dashboard.root, icon: ICONS.dashboard },
+          { title: 'Points page', path: paths.dashboard.root, icon: ICONS.dashboard },
           { title: 'Electricity meters', path: paths.dashboard.general.electricityMeters, icon: ICONS.ecommerce },
         ],
       },
