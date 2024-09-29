@@ -108,8 +108,8 @@ export default function ElectricityMetersItemHorizontal({ electricityMeters }: P
         </Stack>
 
         {mdUp && (
-          <Box sx={{ width: 180, height: 240, position: 'relative', flexShrink: 0, p: 1 }}>
-            <Image src="https://cdn.cbs.nl/images/41517351514d66536b465059692b346b54742f3341673d3d/720x480.jpg" sx={{ height: 1, borderRadius: 1.5 }} />
+          <Box sx={{ width: 220, height: 240, position: 'relative', flexShrink: 0, p: 1 }}>
+            <Image src="https://cdn-icons-png.flaticon.com/512/3356/3356616.png" sx={{ height: 1, borderRadius: 1.5 }} />
           </Box>
         )}
       </Stack>

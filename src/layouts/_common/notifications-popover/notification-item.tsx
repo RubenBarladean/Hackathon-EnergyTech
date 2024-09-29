@@ -146,7 +146,7 @@ export default function NotificationItem({notification}: NotificationItemProps) 
                 }}
             >
                 {reader(
-                    `<p>Использовать 450 кВтч за следующий час и получи эксклюзивные бонусы! У вас сейчас потребление 700 кВтч! </p>`
+                    `<p>Reduce consumption to 1.5 kWh/hr (currently 3 kWh/hr, need to reduce by 1.5 kWh/hr) and get a bonus 10 Coins!!!!</p>`
                 )}
             </Box>
         </Stack>
@@ -164,7 +164,7 @@ export default function NotificationItem({notification}: NotificationItemProps) 
                 }}
             >
                 {reader(
-                    `<p>Используете 700 кВтч за следующий час и получи 10 коинов , в это время можно повысить свое потребление  эффективно . У вас сейчас 450 кВтч! </p>`
+                    `<p>Increase consumption to 3 kWh/hr (now 1.4 kWh/hr, need to add 1.6 kWh/hr) to get bonus coins!!!!</p>`
                 )}
             </Box>
         </Stack>
@@ -182,7 +182,7 @@ export default function NotificationItem({notification}: NotificationItemProps) 
                 }}
             >
                 {reader(
-                    `<p>Увеличь потребление на 2 кВт/ч с 15:00 до 17:00, экономия 10 лей. </p>`
+                    `<p>Increase consumption by 2 kWh between 15:00 and 17:00, saving 10 lei.</p>`
                 )}
             </Box>
         </Stack>

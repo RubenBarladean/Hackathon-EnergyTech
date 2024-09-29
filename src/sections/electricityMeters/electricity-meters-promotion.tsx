@@ -37,12 +37,20 @@ export default function ElectricityMetersPromotion({id}: Props) {
                 </Card>
                 <Stack direction={{xs: 'column', sm: 'row'}} sx={{mb: 2}} spacing={2}>
                     <Card sx={{p: 2, textAlign: 'center',  flex: 1}}>
-                        <Typography>Consume in 60 minutes - 450Wh</Typography>
+                        <Typography>Consume in 60 minutes - 1.5kWh</Typography>
                     </Card>
                     <ElectricityMetersCurrentWh/>
                 </Stack>
                 <Card sx={{p: 3, textAlign: 'center', mb: 2}}>
-                    <Typography variant="body1">Use less than this amount of energy throughout the event, to earn points.</Typography>
+                    <Typography variant="body1">To reduce consumption to 1.5 kWh/hour, the following appliances must be
+                        turned off:<br/>
+                        1. Air conditioner: 0.694 kWh/hour<br/>
+                        2. electric boiler: 0.243 kWh/hour<br/>
+                        3. induction stove: 0.208 kWh/hr.<br/>
+                        4. refrigerator: 0.167 kWh/hour<br/>
+                        5. Lighting: 0.111 kWh/hr.<br/>
+                        These appliances in total will reduce consumption by 1.5 kWh/hr, which will achieve 1.5 kWh/hr
+                        and receive load reduction bonuses.</Typography>
                 </Card>
                 <Stack direction={{xs: 'column', sm: 'row'}} spacing={2} sx={{mb: 3}}>
                     <Card sx={{p: 2, textAlign: 'center', flex: 1, alignContent: 'center'}}>

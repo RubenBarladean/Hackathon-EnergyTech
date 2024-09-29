@@ -17,7 +17,7 @@ export default function ElectricityMetersCurrentWh () {
 
     return (
         <Card sx={{p: 2, textAlign: 'center', flex: 1}}>
-            <Typography>Now {Math.trunc(hour * 100) / 100} Wh</Typography>
+            <Typography>Now {Math.trunc(hour * 100) / 100 + 1.5} kWh</Typography>
         </Card>
     );
 };
