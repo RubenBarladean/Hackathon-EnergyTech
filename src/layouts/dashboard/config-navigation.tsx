@@ -5,6 +5,7 @@ import { paths } from 'src/routes/paths';
 import { useLocales } from 'src/locales';
 // components
 import SvgColor from 'src/components/svg-color';
+import Iconify from "../../components/iconify";
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +39,7 @@ const ICONS = {
   disabled: icon('ic_disabled'),
   external: icon('ic_external'),
   menuItem: icon('ic_menu_item'),
-  ecommerce: icon('ic_ecommerce'),
+  ecommerce: <Iconify icon="mage:electricity" />,
   analytics: icon('ic_analytics'),
   dashboard: icon('ic_dashboard'),
 };
@@ -56,7 +57,7 @@ export function useNavData() {
         subheader: t('Панель управления'),
         items: [
           { title: t('Профиль'), path: paths.dashboard.root, icon: ICONS.dashboard },
-          { title: t('Общее'), path: paths.dashboard.general.ecommerce, icon: ICONS.ecommerce },
+          { title: 'Electricity meters', path: paths.dashboard.general.electricityMeters, icon: ICONS.ecommerce },
         ],
       },
 
